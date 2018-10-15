@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b9b4ed396e7d4d4981fc10d39264edb1" Name="Diagram1" ZoomLevel="43">
+        <EntityTypeShape EntityType="IBHSModel.Evaluation" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBHSModel.State" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="IBHSModel.FK_Evaluation_Evaluation" ManuallyRouted="false" />
+        <AssociationConnector Association="IBHSModel.FK_Evaluation_State" ManuallyRouted="false" />
+        <AssociationConnector Association="IBHSModel.FK_State_State" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="IBHSModel.DesignationType" Width="1.5" PointX="0.75" PointY="11.875" />
+        <EntityTypeShape EntityType="IBHSModel.HomeProgramType" Width="1.5" PointX="0.75" PointY="3.5" />
+        <AssociationConnector Association="IBHSModel.FK_Evaluation_DesignationType" />
+        <AssociationConnector Association="IBHSModel.FK_Evaluation_DesignationType1" />
+        <AssociationConnector Association="IBHSModel.FK_Evaluation_HomeProgramType" />
+        <EntityTypeShape EntityType="IBHSModel.FFSL_Evaluations" Width="1.5" PointX="6.125" PointY="6.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

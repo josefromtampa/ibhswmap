@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IBHSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DesignationType">
+          <Key>
+            <PropertyRef Name="DesignationTypeId" />
+          </Key>
+          <Property Name="DesignationTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="EvaluationId" />
+          </Key>
+          <Property Name="EvaluationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FortifiedId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ApplicantTypeId" Type="int" Nullable="false" />
+          <Property Name="ApplicantOther" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeOwnerId" Type="int" Nullable="false" />
+          <Property Name="PropertyAddress1" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="PropertyAddress2" Type="nvarchar" MaxLength="150" />
+          <Property Name="PropertyCity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PropertyStateId" Type="int" Nullable="false" />
+          <Property Name="PropertyPostalCode" Type="int" Nullable="false" />
+          <Property Name="PropertyCountryId" Type="int" Nullable="false" />
+          <Property Name="ApplicationTypeId" Type="int" Nullable="false" />
+          <Property Name="WorkingWithBuilder" Type="bit" Nullable="false" />
+          <Property Name="BuilderName" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="YearBuilt" Type="int" Nullable="false" />
+          <Property Name="Remodeled" Type="bit" Nullable="false" />
+          <Property Name="RemodeledDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="HomeCategoryId" Type="int" Nullable="false" />
+          <Property Name="HearAboutId" Type="int" />
+          <Property Name="HomeProgramTypeId" Type="int" Nullable="false" />
+          <Property Name="DesignationTypeId" Type="int" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="EvaluatorId" Type="int" Nullable="false" />
+          <Property Name="EvaluationDate" Type="datetime" />
+          <Property Name="EvaluationExpireDate" Type="datetime" />
+          <Property Name="EvalCurrentConditionReportStatusId" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CancelledDate" Type="datetime" />
+          <Property Name="CancelledReason" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="DesignationAwarded" Type="bit" />
+          <Property Name="PreAuditDesignation" Type="int" />
+          <Property Name="AuditDate" Type="datetime" />
+          <Property Name="RoofYear" Type="int" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExclusionMaxDate" Type="datetime" />
+          <Property Name="ExclusionMinDate" Type="datetime" />
+          <Property Name="RoofAge" Type="int" />
+          <Property Name="RoofConfidence" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReleaseToCustomer" Type="bit" />
+          <Property Name="ReleaseDate" Type="datetime" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="SubmitCount" Type="int" />
+          <Property Name="FormValidationCompleteDate" Type="datetime" />
+          <Property Name="DecisionTreeStartDate" Type="datetime" />
+          <Property Name="DecisionTreeCompleteDate" Type="datetime" />
+          <Property Name="ASCE710" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASCE705" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewRoof" Type="bit" />
+          <Property Name="RecommendedDesignationTypeId" Type="int" />
+          <Property Name="FlaggedForAudit" Type="bit" />
+          <Property Name="SiteVisitDate" Type="datetime" />
+          <Property Name="IsEvaluationIncomplete" Type="bit" />
+          <Property Name="SendMailtoEvaluator" Type="bit" />
+          <Property Name="Auditor" Type="nchar" MaxLength="100" />
+          <Property Name="ProjectLabel" Type="nvarchar" MaxLength="80" />
+          <Property Name="HailProtection" Type="bit" />
+          <Property Name="Auditor_Note" Type="nvarchar(max)" />
+          <Property Name="Evaluator_Note" Type="nvarchar(max)" />
+          <Property Name="QBaseImportDate" Type="datetime" />
+          <Property Name="DesignationDate" Type="datetime" />
+          <Property Name="iFormId" Type="int" />
+          <Property Name="iFormPageId" Type="nvarchar" MaxLength="50" />
+          <Property Name="iFormProfileId" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaltAirCorrosionFlag" Type="bit" />
+          <Property Name="SaltAirCorrosionNotQualified" Type="bit" />
+          <Property Name="FormValidationRerun" Type="bit" />
+          <Property Name="NCIUAClaimId" Type="nvarchar" MaxLength="50" />
+          <Property Name="NCIUANotes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FFSL_Evaluations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="HomeType" Type="nvarchar" MaxLength="10" />
+          <Property Name="YearBuilt" Type="int" />
+          <Property Name="StructureSystem" Type="nvarchar" MaxLength="50" />
+          <Property Name="SquareFootage" Type="int" />
+          <Property Name="LotSize" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stories" Type="int" />
+          <Property Name="Decks" Type="int" />
+          <Property Name="AttachedStructures" Type="int" />
+          <Property Name="Builder" Type="nvarchar" MaxLength="250" />
+          <Property Name="Inspector" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProjectManager" Type="nvarchar" MaxLength="250" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="Designated" Type="bit" />
+          <Property Name="InProgress" Type="bit" />
+          <Property Name="DesignatedDate" Type="datetime" />
+          <Property Name="InpectedDate" Type="datetime" />
+          <Property Name="lat" Type="nvarchar" MaxLength="50" />
+          <Property Name="long" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HomeProgramType">
+          <Key>
+            <PropertyRef Name="HomeProgramTypeId" />
+          </Key>
+          <Property Name="HomeProgramTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateCode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Evaluation_DesignationType">
+          <End Role="DesignationType" Type="Self.DesignationType" Multiplicity="0..1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DesignationType">
+              <PropertyRef Name="DesignationTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="RecommendedDesignationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_DesignationType1">
+          <End Role="DesignationType" Type="Self.DesignationType" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DesignationType">
+              <PropertyRef Name="DesignationTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="DesignationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_Evaluation">
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="1" />
+          <End Role="Evaluation1" Type="Self.Evaluation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evaluation">
+              <PropertyRef Name="EvaluationId" />
+            </Principal>
+            <Dependent Role="Evaluation1">
+              <PropertyRef Name="EvaluationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_HomeProgramType">
+          <End Role="HomeProgramType" Type="Self.HomeProgramType" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HomeProgramType">
+              <PropertyRef Name="HomeProgramTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="HomeProgramTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="PropertyStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="State1" Type="Self.State" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="State1">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IBHSModelStoreContainer">
+          <EntitySet Name="DesignationType" EntityType="Self.DesignationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evaluation" EntityType="Self.Evaluation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FFSL_Evaluations" EntityType="Self.FFSL_Evaluations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeProgramType" EntityType="Self.HomeProgramType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Evaluation_DesignationType" Association="Self.FK_Evaluation_DesignationType">
+            <End Role="DesignationType" EntitySet="DesignationType" />
+            <End Role="Evaluation" EntitySet="Evaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_DesignationType1" Association="Self.FK_Evaluation_DesignationType1">
+            <End Role="DesignationType" EntitySet="DesignationType" />
+            <End Role="Evaluation" EntitySet="Evaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_Evaluation" Association="Self.FK_Evaluation_Evaluation">
+            <End Role="Evaluation" EntitySet="Evaluation" />
+            <End Role="Evaluation1" EntitySet="Evaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_HomeProgramType" Association="Self.FK_Evaluation_HomeProgramType">
+            <End Role="HomeProgramType" EntitySet="HomeProgramType" />
+            <End Role="Evaluation" EntitySet="Evaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_State" Association="Self.FK_Evaluation_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Evaluation" EntitySet="Evaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_State" Association="Self.FK_State_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="State1" EntitySet="State" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IBHSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="EvaluationId" />
+          </Key>
+          <Property Name="EvaluationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FortifiedId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ApplicantTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ApplicantOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomeOwnerId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyAddress1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PropertyAddress2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PropertyStateId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyPostalCode" Type="Int32" Nullable="false" />
+          <Property Name="PropertyCountryId" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationTypeId" Type="Int32" Nullable="false" />
+          <Property Name="WorkingWithBuilder" Type="Boolean" Nullable="false" />
+          <Property Name="BuilderName" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YearBuilt" Type="Int32" Nullable="false" />
+          <Property Name="Remodeled" Type="Boolean" Nullable="false" />
+          <Property Name="RemodeledDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HomeCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="HearAboutId" Type="Int32" />
+          <Property Name="HomeProgramTypeId" Type="Int32" Nullable="false" />
+          <Property Name="DesignationTypeId" Type="Int32" Nullable="false" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="EvaluatorId" Type="Int32" Nullable="false" />
+          <Property Name="EvaluationDate" Type="DateTime" Precision="3" />
+          <Property Name="EvaluationExpireDate" Type="DateTime" Precision="3" />
+          <Property Name="EvalCurrentConditionReportStatusId" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CancelledDate" Type="DateTime" Precision="3" />
+          <Property Name="CancelledReason" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="DesignationAwarded" Type="Boolean" />
+          <Property Name="PreAuditDesignation" Type="Int32" />
+          <Property Name="AuditDate" Type="DateTime" Precision="3" />
+          <Property Name="RoofYear" Type="Int32" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExclusionMaxDate" Type="DateTime" Precision="3" />
+          <Property Name="ExclusionMinDate" Type="DateTime" Precision="3" />
+          <Property Name="RoofAge" Type="Int32" />
+          <Property Name="RoofConfidence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReleaseToCustomer" Type="Boolean" />
+          <Property Name="ReleaseDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitCount" Type="Int32" />
+          <Property Name="FormValidationCompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="DecisionTreeStartDate" Type="DateTime" Precision="3" />
+          <Property Name="DecisionTreeCompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="ASCE710" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASCE705" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewRoof" Type="Boolean" />
+          <Property Name="RecommendedDesignationTypeId" Type="Int32" />
+          <Property Name="FlaggedForAudit" Type="Boolean" />
+          <Property Name="SiteVisitDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEvaluationIncomplete" Type="Boolean" />
+          <Property Name="SendMailtoEvaluator" Type="Boolean" />
+          <Property Name="Auditor" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="ProjectLabel" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="HailProtection" Type="Boolean" />
+          <Property Name="Auditor_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Evaluator_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QBaseImportDate" Type="DateTime" Precision="3" />
+          <Property Name="DesignationDate" Type="DateTime" Precision="3" />
+          <Property Name="iFormId" Type="Int32" />
+          <Property Name="iFormPageId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iFormProfileId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaltAirCorrosionFlag" Type="Boolean" />
+          <Property Name="SaltAirCorrosionNotQualified" Type="Boolean" />
+          <Property Name="FormValidationRerun" Type="Boolean" />
+          <NavigationProperty Name="Evaluation1" Relationship="Self.FK_Evaluation_Evaluation" FromRole="Evaluation" ToRole="Evaluation1" />
+          <NavigationProperty Name="Evaluation2" Relationship="Self.FK_Evaluation_Evaluation" FromRole="Evaluation1" ToRole="Evaluation" />
+          <NavigationProperty Name="State" Relationship="Self.FK_Evaluation_State" FromRole="Evaluation" ToRole="State" />
+          <NavigationProperty Name="DesignationType" Relationship="IBHSModel.FK_Evaluation_DesignationType" FromRole="Evaluation" ToRole="DesignationType" />
+          <NavigationProperty Name="DesignationType1" Relationship="IBHSModel.FK_Evaluation_DesignationType1" FromRole="Evaluation" ToRole="DesignationType" />
+          <NavigationProperty Name="HomeProgramType" Relationship="IBHSModel.FK_Evaluation_HomeProgramType" FromRole="Evaluation" ToRole="HomeProgramType" />
+          <Property Name="NCIUAClaimId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NCIUANotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Evaluations" Relationship="Self.FK_Evaluation_State" FromRole="State" ToRole="Evaluation" />
+          <NavigationProperty Name="State1" Relationship="Self.FK_State_State" FromRole="State" ToRole="State1" />
+          <NavigationProperty Name="State2" Relationship="Self.FK_State_State" FromRole="State1" ToRole="State" />
+        </EntityType>
+        <Association Name="FK_Evaluation_Evaluation">
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="1" />
+          <End Role="Evaluation1" Type="Self.Evaluation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evaluation">
+              <PropertyRef Name="EvaluationId" />
+            </Principal>
+            <Dependent Role="Evaluation1">
+              <PropertyRef Name="EvaluationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="PropertyStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="State1" Type="Self.State" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="State1">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IBHSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Evaluations" EntityType="Self.Evaluation" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <AssociationSet Name="FK_Evaluation_Evaluation" Association="Self.FK_Evaluation_Evaluation">
+            <End Role="Evaluation" EntitySet="Evaluations" />
+            <End Role="Evaluation1" EntitySet="Evaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_State" Association="Self.FK_Evaluation_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Evaluation" EntitySet="Evaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_State" Association="Self.FK_State_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="State1" EntitySet="States" />
+          </AssociationSet>
+          <EntitySet Name="DesignationTypes" EntityType="IBHSModel.DesignationType" />
+          <EntitySet Name="HomeProgramTypes" EntityType="IBHSModel.HomeProgramType" />
+          <AssociationSet Name="FK_Evaluation_DesignationType" Association="IBHSModel.FK_Evaluation_DesignationType">
+            <End Role="DesignationType" EntitySet="DesignationTypes" />
+            <End Role="Evaluation" EntitySet="Evaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_DesignationType1" Association="IBHSModel.FK_Evaluation_DesignationType1">
+            <End Role="DesignationType" EntitySet="DesignationTypes" />
+            <End Role="Evaluation" EntitySet="Evaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_HomeProgramType" Association="IBHSModel.FK_Evaluation_HomeProgramType">
+            <End Role="HomeProgramType" EntitySet="HomeProgramTypes" />
+            <End Role="Evaluation" EntitySet="Evaluations" />
+          </AssociationSet>
+          <EntitySet Name="FFSL_Evaluations" EntityType="IBHSModel.FFSL_Evaluations" />
+        </EntityContainer>
+        <EntityType Name="DesignationType">
+          <Key>
+            <PropertyRef Name="DesignationTypeId" />
+          </Key>
+          <Property Name="DesignationTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Evaluations" Relationship="IBHSModel.FK_Evaluation_DesignationType" FromRole="DesignationType" ToRole="Evaluation" />
+          <NavigationProperty Name="Evaluations1" Relationship="IBHSModel.FK_Evaluation_DesignationType1" FromRole="DesignationType" ToRole="Evaluation" />
+        </EntityType>
+        <EntityType Name="HomeProgramType">
+          <Key>
+            <PropertyRef Name="HomeProgramTypeId" />
+          </Key>
+          <Property Name="HomeProgramTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Evaluations" Relationship="IBHSModel.FK_Evaluation_HomeProgramType" FromRole="HomeProgramType" ToRole="Evaluation" />
+        </EntityType>
+        <Association Name="FK_Evaluation_DesignationType">
+          <End Type="IBHSModel.DesignationType" Role="DesignationType" Multiplicity="0..1" />
+          <End Type="IBHSModel.Evaluation" Role="Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DesignationType">
+              <PropertyRef Name="DesignationTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="RecommendedDesignationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_DesignationType1">
+          <End Type="IBHSModel.DesignationType" Role="DesignationType" Multiplicity="1" />
+          <End Type="IBHSModel.Evaluation" Role="Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DesignationType">
+              <PropertyRef Name="DesignationTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="DesignationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_HomeProgramType">
+          <End Type="IBHSModel.HomeProgramType" Role="HomeProgramType" Multiplicity="1" />
+          <End Type="IBHSModel.Evaluation" Role="Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HomeProgramType">
+              <PropertyRef Name="HomeProgramTypeId" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="HomeProgramTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FFSL_Evaluations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="Int32" Nullable="false" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="HomeType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="YearBuilt" Type="Int32" />
+          <Property Name="StructureSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SquareFootage" Type="Int32" />
+          <Property Name="LotSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stories" Type="Int32" />
+          <Property Name="Decks" Type="Int32" />
+          <Property Name="AttachedStructures" Type="Int32" />
+          <Property Name="Builder" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Inspector" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectManager" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="Designated" Type="Boolean" />
+          <Property Name="InProgress" Type="Boolean" />
+          <Property Name="DesignatedDate" Type="DateTime" Precision="3" />
+          <Property Name="InpectedDate" Type="DateTime" Precision="3" />
+          <Property Name="lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="long" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IBHSModelStoreContainer" CdmEntityContainer="IBHSEntities">
+          <EntitySetMapping Name="Evaluations">
+            <EntityTypeMapping TypeName="IBHSModel.Evaluation">
+              <MappingFragment StoreEntitySet="Evaluation">
+                <ScalarProperty Name="NCIUANotes" ColumnName="NCIUANotes" />
+                <ScalarProperty Name="NCIUAClaimId" ColumnName="NCIUAClaimId" />
+                <ScalarProperty Name="EvaluationId" ColumnName="EvaluationId" />
+                <ScalarProperty Name="FortifiedId" ColumnName="FortifiedId" />
+                <ScalarProperty Name="ApplicantTypeId" ColumnName="ApplicantTypeId" />
+                <ScalarProperty Name="ApplicantOther" ColumnName="ApplicantOther" />
+                <ScalarProperty Name="HomeOwnerId" ColumnName="HomeOwnerId" />
+                <ScalarProperty Name="PropertyAddress1" ColumnName="PropertyAddress1" />
+                <ScalarProperty Name="PropertyAddress2" ColumnName="PropertyAddress2" />
+                <ScalarProperty Name="PropertyCity" ColumnName="PropertyCity" />
+                <ScalarProperty Name="PropertyStateId" ColumnName="PropertyStateId" />
+                <ScalarProperty Name="PropertyPostalCode" ColumnName="PropertyPostalCode" />
+                <ScalarProperty Name="PropertyCountryId" ColumnName="PropertyCountryId" />
+                <ScalarProperty Name="ApplicationTypeId" ColumnName="ApplicationTypeId" />
+                <ScalarProperty Name="WorkingWithBuilder" ColumnName="WorkingWithBuilder" />
+                <ScalarProperty Name="BuilderName" ColumnName="BuilderName" />
+                <ScalarProperty Name="YearBuilt" ColumnName="YearBuilt" />
+                <ScalarProperty Name="Remodeled" ColumnName="Remodeled" />
+                <ScalarProperty Name="RemodeledDescription" ColumnName="RemodeledDescription" />
+                <ScalarProperty Name="HomeCategoryId" ColumnName="HomeCategoryId" />
+                <ScalarProperty Name="HearAboutId" ColumnName="HearAboutId" />
+                <ScalarProperty Name="HomeProgramTypeId" ColumnName="HomeProgramTypeId" />
+                <ScalarProperty Name="DesignationTypeId" ColumnName="DesignationTypeId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="EvaluatorId" ColumnName="EvaluatorId" />
+                <ScalarProperty Name="EvaluationDate" ColumnName="EvaluationDate" />
+                <ScalarProperty Name="EvaluationExpireDate" ColumnName="EvaluationExpireDate" />
+                <ScalarProperty Name="EvalCurrentConditionReportStatusId" ColumnName="EvalCurrentConditionReportStatusId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CancelledDate" ColumnName="CancelledDate" />
+                <ScalarProperty Name="CancelledReason" ColumnName="CancelledReason" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="DesignationAwarded" ColumnName="DesignationAwarded" />
+                <ScalarProperty Name="PreAuditDesignation" ColumnName="PreAuditDesignation" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="RoofYear" ColumnName="RoofYear" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ExclusionMaxDate" ColumnName="ExclusionMaxDate" />
+                <ScalarProperty Name="ExclusionMinDate" ColumnName="ExclusionMinDate" />
+                <ScalarProperty Name="RoofAge" ColumnName="RoofAge" />
+                <ScalarProperty Name="RoofConfidence" ColumnName="RoofConfidence" />
+                <ScalarProperty Name="ReleaseToCustomer" ColumnName="ReleaseToCustomer" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="SubmitCount" ColumnName="SubmitCount" />
+                <ScalarProperty Name="FormValidationCompleteDate" ColumnName="FormValidationCompleteDate" />
+                <ScalarProperty Name="DecisionTreeStartDate" ColumnName="DecisionTreeStartDate" />
+                <ScalarProperty Name="DecisionTreeCompleteDate" ColumnName="DecisionTreeCompleteDate" />
+                <ScalarProperty Name="ASCE710" ColumnName="ASCE710" />
+                <ScalarProperty Name="ASCE705" ColumnName="ASCE705" />
+                <ScalarProperty Name="NewRoof" ColumnName="NewRoof" />
+                <ScalarProperty Name="RecommendedDesignationTypeId" ColumnName="RecommendedDesignationTypeId" />
+                <ScalarProperty Name="FlaggedForAudit" ColumnName="FlaggedForAudit" />
+                <ScalarProperty Name="SiteVisitDate" ColumnName="SiteVisitDate" />
+                <ScalarProperty Name="IsEvaluationIncomplete" ColumnName="IsEvaluationIncomplete" />
+                <ScalarProperty Name="SendMailtoEvaluator" ColumnName="SendMailtoEvaluator" />
+                <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+                <ScalarProperty Name="ProjectLabel" ColumnName="ProjectLabel" />
+                <ScalarProperty Name="HailProtection" ColumnName="HailProtection" />
+                <ScalarProperty Name="Auditor_Note" ColumnName="Auditor_Note" />
+                <ScalarProperty Name="Evaluator_Note" ColumnName="Evaluator_Note" />
+                <ScalarProperty Name="QBaseImportDate" ColumnName="QBaseImportDate" />
+                <ScalarProperty Name="DesignationDate" ColumnName="DesignationDate" />
+                <ScalarProperty Name="iFormId" ColumnName="iFormId" />
+                <ScalarProperty Name="iFormPageId" ColumnName="iFormPageId" />
+                <ScalarProperty Name="iFormProfileId" ColumnName="iFormProfileId" />
+                <ScalarProperty Name="SaltAirCorrosionFlag" ColumnName="SaltAirCorrosionFlag" />
+                <ScalarProperty Name="SaltAirCorrosionNotQualified" ColumnName="SaltAirCorrosionNotQualified" />
+                <ScalarProperty Name="FormValidationRerun" ColumnName="FormValidationRerun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="IBHSModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DesignationTypes">
+            <EntityTypeMapping TypeName="IBHSModel.DesignationType">
+              <MappingFragment StoreEntitySet="DesignationType">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DesignationTypeId" ColumnName="DesignationTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomeProgramTypes">
+            <EntityTypeMapping TypeName="IBHSModel.HomeProgramType">
+              <MappingFragment StoreEntitySet="HomeProgramType">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="HomeProgramTypeId" ColumnName="HomeProgramTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FFSL_Evaluations">
+            <EntityTypeMapping TypeName="IBHSModel.FFSL_Evaluations">
+              <MappingFragment StoreEntitySet="FFSL_Evaluations">
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="InpectedDate" ColumnName="InpectedDate" />
+                <ScalarProperty Name="DesignatedDate" ColumnName="DesignatedDate" />
+                <ScalarProperty Name="InProgress" ColumnName="InProgress" />
+                <ScalarProperty Name="Designated" ColumnName="Designated" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+                <ScalarProperty Name="Inspector" ColumnName="Inspector" />
+                <ScalarProperty Name="Builder" ColumnName="Builder" />
+                <ScalarProperty Name="AttachedStructures" ColumnName="AttachedStructures" />
+                <ScalarProperty Name="Decks" ColumnName="Decks" />
+                <ScalarProperty Name="Stories" ColumnName="Stories" />
+                <ScalarProperty Name="LotSize" ColumnName="LotSize" />
+                <ScalarProperty Name="SquareFootage" ColumnName="SquareFootage" />
+                <ScalarProperty Name="StructureSystem" ColumnName="StructureSystem" />
+                <ScalarProperty Name="YearBuilt" ColumnName="YearBuilt" />
+                <ScalarProperty Name="HomeType" ColumnName="HomeType" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,393 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5D6C92A-47A4-4E47-AA24-F4FA6FB403BC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBHSWMap</RootNamespace>
+    <AssemblyName>IBHSWMap</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site\evaluations.svc" />
+    <Content Include="IBHS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IBHS.Context.cs</LastGenOutput>
+      <DependentUpon>IBHS.edmx</DependentUpon>
+    </Content>
+    <Content Include="IBHS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IBHS.edmx</DependentUpon>
+      <LastGenOutput>IBHS.cs</LastGenOutput>
+    </Content>
+    <Content Include="Site\windy.aspx" />
+    <Content Include="Site\Windy.html" />
+    <Content Include="Site\world.gif" />
+    <Content Include="vendors\Leaflet.0.7.7.1\.gitignore" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\build.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\build.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\deps.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\hintrc.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\css\mobile.css" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\css\screen.css" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\hacks\jitter.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\leaflet-include.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\canvas.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\controls.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\geolocation.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\iframe.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\image-overlay.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\map-mobile.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\map.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\max-bounds.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\opacity.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\scroll.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\simple-proj.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\wms-marble.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\wms.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\map\zoomlevels.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\add_remove_layers.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\bringtoback.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\canvasloop.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\click_on_canvas.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\click_on_canvas_broken.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\dragging_and_copyworldjump.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\opacity.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\popupcontextmenuclicks.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\removetilewhilepan.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\remove_while_dragging.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\reuse_popups.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\rtl.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\rtl2.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\setview_marker_setview.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\set_icon_reuse_dom.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\tests\svg_clicks.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\bounds-extend.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\feature-group-bounds.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\geojson-sample.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\geojson.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\rectangle.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\route.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\touchzoomemu.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\us-states.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\vector-bounds.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\vector-canvas.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\vector-mobile.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\vector-simple.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\debug\vector\vector.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\images\layers-2x.png" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\images\layers.png" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\images\marker-icon-2x.png" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\images\marker-icon.png" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\images\marker-shadow.png" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\leaflet-src.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\leaflet.css" />
+    <Content Include="vendors\Leaflet.0.7.7.1\dist\leaflet.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\Jakefile.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\after.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\before.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\expect.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\index.html" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\karma.conf.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\sinon.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\spec.hintrc.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\control\Control.AttributionSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\control\Control.LayersSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\control\Control.ScaleSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\core\ClassSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\core\EventsSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\core\UtilSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\dom\DomEventSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\dom\DomUtilSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\dom\PosAnimationSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geometry\BoundsSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geometry\LineUtilSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geometry\PointSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geometry\PolyUtilSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geometry\TransformationSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geo\CRSSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geo\LatLngBoundsSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geo\LatLngSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\geo\ProjectionSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\FeatureGroupSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\GeoJSONSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\LayerGroupSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\marker\MarkerSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\PopupSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\TileLayerSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\vector\CircleMarkerSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\vector\CircleSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\vector\PolygonSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\vector\PolylineGeometrySpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\layer\vector\PolylineSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\LeafletSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\map\handler\Map.DragSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\map\MapSpec.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\spec\suites\SpecHelper.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\control\Control.Attribution.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\control\Control.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\control\Control.Layers.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\control\Control.Scale.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\control\Control.Zoom.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\copyright.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\core\Browser.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\core\Class.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\core\Events.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\core\Handler.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\core\Util.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\DomEvent.DoubleTap.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\DomEvent.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\DomEvent.Pointer.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\DomUtil.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\Draggable.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\PosAnimation.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\dom\PosAnimation.Timer.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geometry\Bounds.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geometry\LineUtil.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geometry\Point.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geometry\PolyUtil.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geometry\Transformation.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\crs\CRS.EPSG3395.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\crs\CRS.EPSG3857.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\crs\CRS.EPSG4326.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\crs\CRS.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\crs\CRS.Simple.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\LatLng.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\LatLngBounds.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\projection\Projection.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\projection\Projection.LonLat.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\projection\Projection.Mercator.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\geo\projection\Projection.SphericalMercator.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\images\layers.svg" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\images\marker.svg" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\FeatureGroup.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\GeoJSON.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\ImageOverlay.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\LayerGroup.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\DivIcon.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\Icon.Default.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\Icon.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\Marker.Drag.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\Marker.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\marker\Marker.Popup.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\Popup.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\tile\TileLayer.Anim.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\tile\TileLayer.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\tile\TileLayer.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\tile\TileLayer.WMS.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\canvas\Circle.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\canvas\CircleMarker.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\canvas\Path.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\canvas\Polygon.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\canvas\Polyline.Canvas.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Circle.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\CircleMarker.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\MultiPoly.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Path.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Path.Popup.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Path.SVG.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Path.VML.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Polygon.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Polyline.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\layer\vector\Rectangle.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\Leaflet.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\anim\Map.PanAnimation.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\anim\Map.ZoomAnimation.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\ext\Map.Geolocation.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.BoxZoom.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.DoubleClickZoom.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.Drag.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.Keyboard.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.ScrollWheelZoom.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.Tap.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\handler\Map.TouchZoom.js" />
+    <Content Include="vendors\Leaflet.0.7.7.1\src\map\Map.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignationType.cs">
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation.cs">
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FFSL_Evaluations.cs">
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeProgramType.cs">
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site\evaluations.svc.cs">
+      <DependentUpon>evaluations.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IBHS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IBHS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBHS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBHS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IBHS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site\windy.aspx.cs">
+      <DependentUpon>windy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\windy.aspx.designer.cs">
+      <DependentUpon>windy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>IBHS.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="IBHS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IBHS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="IBHS.edmx.diagram">
+      <DependentUpon>IBHS.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FortifiedServs - Web Deploy.pubxml" />
+    <Content Include="vendors\Leaflet.0.7.7.1\.npmignore" />
+    <Content Include="vendors\Leaflet.0.7.7.1\.travis.yml" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\bower.json" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\component.json" />
+    <Content Include="vendors\Leaflet.0.7.7.1\build\publish.sh" />
+    <Content Include="vendors\Leaflet.0.7.7.1\CHANGELOG.md" />
+    <Content Include="vendors\Leaflet.0.7.7.1\CONTRIBUTING.md" />
+    <Content Include="vendors\Leaflet.0.7.7.1\FAQ.md" />
+    <Content Include="vendors\Leaflet.0.7.7.1\LICENSE" />
+    <Content Include="vendors\Leaflet.0.7.7.1\package.json" />
+    <Content Include="vendors\Leaflet.0.7.7.1\PLUGIN-GUIDE.md" />
+    <Content Include="vendors\Leaflet.0.7.7.1\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51062</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18181/IBHSWMap</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
